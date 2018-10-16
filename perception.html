@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <script src="/study_assets/gratitude/jspsych-6.0.4/jspsych.js"></script>
+  <script src="/study_assets/gratitude/jspsych-6.0.4/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="/study_assets/gratitude/jspsych-6.0.4/plugins/jspsych-survey-likert.js"></script>
+<link href="/study_assets/gratitude/jspsych-6.0.4/css/jspsych.css" rel="stylesheet" type="text/css">
+  <script src="/assets/javascripts/jatos.js"></script>
+</head>
+
+<body>
+
+    <!-- scripts start here -->
+    
+    
+    <!-- randomize title of game based on condition -->
+
+    <script type="text/javascript">
+        jatos.onLoad(function() {
+          
+  var timeline = [];
+
+    /* define welcome message trial */
+  var scale_1 = ["Strongly Disagree", "Disagree", "Slightly Disagree", "Neutral", "Slightly Agree", "Agree", "Strongly Agree"];
+
+  var likert_page = {
+    type: 'survey-likert',
+    preamble: "My partner throughout this task seemed...",
+    questions: [{prompt: "Grateful", labels: scale_1},
+    {prompt: "Cooperative", labels: scale_1},
+    {prompt: "Trustworthy", labels: scale_1}
+    
+    ],
+};
+
+  timeline.push(likert_page);
+
+    /* start the experiment */
+    jsPsych.init({
+      timeline: timeline
+    });
+      
+        });
+        
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" /> 
+    <script src="/assets/javascripts/jatos.js"></script>
+    <script src="/study_assets/gratitude/libs/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Puzzle-Solving Task Instructions</title>
+</head>
+
+<body>
+	<h2> Instructions: First Puzzle-Solving Task </h2>	
+	
+    <p> For the first task of this study you will solve a puzzle. You and your partner will work on solving the same puzzle independently. </p>
+    
+    <p>You can earn real money by completing this task. If you correctly solve the puzzle, you will receive an extra $1.00 bonus payment. Similarly, if your partner correctly solves the puzzle, your partner will receive an extra $1.00 bonus payment. If you both correctly solve the puzzle, both of you will receive $1.00 bonus payments. In other words, your own earnings are in no way affected by your partner's earnings. </p>
+    
+    <p> For the first puzzle task, <b>one of you will be randomly selected to receive a hint</b> that will make solving the puzzle easier. The other participant will be asked to complete the puzzle without receiving a hint. The participant that is to receive the hint will be randomly selected by the system. </p>
+    
+    <p>Press "Next" when you're done reading the instructions and are ready to start the Puzzle-Solving Task.</p>
+    
+    
+		
+    <div id="buttons">
+	<!-- create next button -->
+        <button id="nextButton">Next</button>
+    </div>
+
+    <script type="text/javascript">
+        jatos.onLoad(function() {
+            $("#buttons").show();
+        });
+<!-- if agree button clicked, create a variable saying consent was given -->
+        $('#nextButton').click(function() {
+<!-- start the next component of the study (doesn't currently exist -->
+            jatos.startNextComponent();
+        });
+    </script>
+</body>
+
+</html>

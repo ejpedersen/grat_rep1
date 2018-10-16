@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" /> 
+	<script src="/study_assets/gratitude/javascript/jquery-3.1.1.min.js"></script>
+	<script src="/study_assets/gratitude/javascript/jquery-1.11.1.min.js"></script>
+    <script src="/study_assets/gratitude/survey.jquery.js"></script>
+    <script src="/assets/javascripts/jatos.js"></script>
+    <title>Intro</title>
+    
+ <!-- The style specification below allows for the loader to be centered--> 
+    <style>
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
+
+</head>
+
+
+<body>
+  
+  <h2> Synchronizing... </h2>
+  
+  <h3> You are now done with the first task</h3>
+  
+  <p> Please wait until <span style="font-family: courier; font-style: bold; color:red; font-size: 20px">TJ</span> is ready to move on.
+    
+    
+  <!-- Loader image --> 
+  <div id = "loader" style="display:none"><img id = "myImage"
+  src = "/study_assets/gratitude/ajax-loader.gif" style=width50%> </div>
+    
+        <div id="buttons">
+	<!-- create next button -->
+        <button id="nextButton">Next</button>
+    </div>
+
+<!-- SCRIPTS start here. They feature some timeout functions for deception purposes -->
+
+  <!-- Code to assign condition -->
+  <script>
+  jatos.onLoad(function(){
+  var condition = Math.floor(Math.random()*2);
+  jatos.studySessionData["condition"] =  condition;
+  })
+  </script>
+   
+   <!-- Code for the loading icon that disappears after set time --> 
+    <script type="text/javascript">
+
+  (function(){
+    var loader = document.getElementById("loader"),
+
+      show = function(){
+        loader.style.display = "block";
+        setTimeout(hide, 1000);
+      },
+
+      hide = function(){
+        loader.style.display = "none";
+      };
+
+    show();
+  })();
+
+</script>
+    
+    <!-- This is the next button, which also appears after loading icon is gone-->
+    <script>
+        setTimeout(function () {
+            $("#buttons").show();
+        },1500);
+     </script>
+     
+     <script>
+<!-- if agree button clicked, create a variable saying consent was given -->
+        $('#nextButton').click(function() {
+          jatos.submitResultData(JSON.stringify(jatos.studySessionData.condition), jatos.startNextComponent);
+        });
+    </script>
+    
+
+</body>
+
+</html>
