@@ -44,11 +44,13 @@ Atom works like RStudio. You can have your pane for editing (as you would an R s
 
 ![atom_screenshot](atom_screenshot.png)
 
-To set up a 'staged change' (equivalent to `add` in command line), simply save your changes to the script as you normally would (`ctrl + s`).
+To set up a 'staged change' (equivalent to `add` in command line), simply save your changes to the script as you normally would (`ctrl + s`), then select the change(s) in 'Unstaged Changes' and press `Enter`.
 
-To `commit`, select the change in the 'Unstaged Changes' panel and press `Enter`.
+To `commit`, write you 'Commit message' and press `ctrl + Enter`.
 
-To `push`, select the 
+To `push`, select the 'Push' button in the lower-right.
+
+*I prefer to work using my keyboard as much as possible, and because I haven't yet figured out all of the keyboard shortcuts to help navigate through these windows and select the actions I want to take, I kind of prefer using command line for now.*
 
 ### Example Using Command Line
 
