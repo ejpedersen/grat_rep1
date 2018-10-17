@@ -85,3 +85,5 @@ git push origin master
 
 
 I will update this markdown with instructions on how Atom's integration works. Hopefully this demonstrates how easy it can be even with command line.
+
+I added this line within Atom's editor, which I intend to add-commit-push via Atom.
