@@ -42,7 +42,7 @@ You can also use Pull Requests to bring a programming issue to a team-member's (
 
 To add the JATOS file structure to GitHub, I used command line (haven't figured out how to use Atom's integration just yet).
 
-```{r eval = F}
+```
 # change local directory to file structure for git repo
 
 cd /c/Users/forst/Documents/GitHub/esc_grat_rep1
@@ -75,7 +75,7 @@ git push origin master
 
 With each change you make (added/modified file or folder), you will follow these steps. Some steps can be skipped if you already completed them (e.g., `git remote add origin`) or altogether (e.g., `git remote -v`). Let's say you've already set up your local filepath and linked to the appropriate GitHub repo, then your code may simply look like this:
 
-```{r eval = F}
+```
 git add .
 
 git commit -m "fixed some nonsense"
