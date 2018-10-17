@@ -38,7 +38,19 @@ This might not be as relevant for us but it could be super useful. Essentially, 
 
 You can also use Pull Requests to bring a programming issue to a team-member's (or the whole team's) attention.
 
-### Example
+### Example Using Atom
+
+Atom works like RStudio. You can have your pane for editing (as you would an R script), previewing (as if it were output), and managing changes via GitHub.
+
+![atom_screenshot](atom_screenshot.png)
+
+To set up a 'staged change' (equivalent to `add` in command line), simply save your changes to the script as you normally would (`ctrl + s`).
+
+To `commit`, select the change in the 'Unstaged Changes' panel and press `Enter`.
+
+To `push`, select the 
+
+### Example Using Command Line
 
 To add the JATOS file structure to GitHub, I used command line (haven't figured out how to use Atom's integration just yet).
 
