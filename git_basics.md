@@ -42,7 +42,7 @@ You can also use Pull Requests to bring a programming issue to a team-member's (
 
 Atom works like RStudio. You can have your pane for editing (as you would an R script), previewing (as if it were output), and managing changes via GitHub.
 
-![atom_screenshot](atom_screenshot.png)
+![atom_screenshot](atom_screenshot.PNG)
 
 To set up a 'staged change' (equivalent to `add` in command line), simply save your changes to the script as you normally would (`ctrl + s`), then select the change(s) in 'Unstaged Changes' and press `Enter`.
 
