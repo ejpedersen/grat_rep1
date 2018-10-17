@@ -1,4 +1,4 @@
-<center># *Git Basics*</center>
+# Git Basics
 
 ## Software
 
