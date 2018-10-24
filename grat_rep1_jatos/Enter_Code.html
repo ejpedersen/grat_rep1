@@ -6,97 +6,91 @@
     <script src="/assets/javascripts/jatos.js"></script>
     <link rel="stylesheet" href="/study_assets/gratitude/gratitude_money/pure-min.css">
     <link rel="stylesheet" href="/study_assets/gratitude/study.css">
-
+    
 </head>
 
 <body>
 	<div class="pure-g" id="blockA">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center" id= "blockAmiddle">
-			<h2> First Puzzle-Solving Task </h2>
-			<p> <img src="/study_assets/gratitude/img/puzzle.png" width="800"> </p>
+		<div class="pure-u-1-8">
+			<p> <img src="/study_assets/gratitude/img/textbox.png" height="400" width="10"> </p>
+		</div>
+		<div class="pure-u-1-2 is-center" id= "blockAmiddle">
+			<h2> First Puzzle-Solving Task </h2>	
+			<p> <img src="/study_assets/gratitude/img/puzzle.png" width="400"> </p>
 			<p> Using the image above, solve the correct 3-digit code below by selecting numbers from the boxes and clicking 'submit' to check your answer. You can guess as many times as you need, but you only have 5 minutes to solve the puzzle. </p>
 			<p> Remember, you were randomly selected to receive a hint, which can be seen below. </p>
 			<p> Hint: white, orange, gray  </p>
 		</div>
-		<div class="pure-u-1-6"></div>
+		<div class="pure-u-1-4 statusbox" id="tjstatus"></div>
 	</div>
 	<div class="pure-g" id="pulldowns">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-
-			<select id="col1">
-				<option value="0"> Count 1 </option> <option value="1">1</option> <option value="2">2</option>
-				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
+		<div class="pure-u-1-8"></div>
+		<div class="pure-u-1-2 is-center">
+		
+			<select id="col1"> 
+				<option value="0"> Count 1 </option> <option value="1">1</option> <option value="2">2</option> 
+				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option> 
 				<option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
 				<option value="9">9</option>
 			</select>
-
-
-
+			
+			
+			
 
 			<select id="col2">
-				<option value="0"> Count 2 </option> <option value="1">1</option> <option value="2">2</option>
-				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
+				<option value="0"> Count 2 </option> <option value="1">1</option> <option value="2">2</option> 
+				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option> 
 				<option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
 				<option value="9">9</option>
 			</select>
-
-
-
+			
+			
+			
 
 			<select id="col3">
-				<option value="0"> Count 3 </option> <option value="1">1</option> <option value="2">2</option>
-				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
+				<option value="0"> Count 3 </option> <option value="1">1</option> <option value="2">2</option> 
+				<option value="3">3</option> <option value="4">4</option> <option value="5">5</option> 
 				<option value="6">6</option> <option value="7">7</option> <option value="8">8</option>
 				<option value="9">9</option>
 			</select>
-
-			<p />
-			<button class="pure-button pure-button-primary" onclick="dosubmit()">Submit</button>
+		
+			<p /> 
+			<button class="pure-button pure-button-primary" onclick="dosubmit()">Submit</button>		
 		</div>
-		<div class="pure-u-1-6"></div>
-
+		<div class="pure-u-1-4"></div>
+		
 	</div>
-
+	
 	<div class="pure-g" id="hintchoice">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> Do you want to share the hint with JT?</p>
+		<div class="pure-u-1-8"></div>
+		<div class="pure-u-1-2 is-center">
+			<p> Do you want to share the hint with TJ?</p>
 			<button class="pure-button pure-button-primary" onclick="sendhint()">Yes</button>
 			<button class="pure-button" onclick="nexttask()">No</button>
 		</div>
-		<div class="pure-u-1-6"></div>
+		<div class="pure-u-1-4"></div>
 	</div>
+  	
+	
+	
+  
+  
 
-  	<div class="pure-g" id="hintsent">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> The hint has been sent to TJ.</p>
-			<p> TJ will have an opportunity to respond to the hint by sending you a short message.</p>
-		</div>
-		<div class="pure-u-1-6"></div>
-	</div>
+</div> 
 
-	<div class="pure-g" id="message">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> You have received a message from TJ. </p>
-			<p> Thanks so much! I appreciate it!</p>
-		</div>
-		<div class="pure-u-1-6"></div>
-	</div>
 
 
 
 
     <script>
+     	
+     	
      	var results = {button: "No"};
      	$("#hintchoice").hide();
      	$("#hintsent").hide();
      	$("#message").hide();
-
-
+     	
+     	
      	function dosubmit(){
      		var c1 = document.getElementById("col1").value;
      		var c2 = document.getElementById("col2").value;
@@ -106,50 +100,60 @@
      			alert("Please select a number from each dropdown");
      		} else {
      			$("#pulldowns").hide();
-     			$("#blockAmiddle").html("Congrats "+code+" was the correct answer! Please wait while TJ solves the puzzle.");
-     			$("blockBmiddle").html("");
-     			setTimeout(enablehint, 5000);
-
-
+     			$("#blockAmiddle").html("Congrats "+code+" was the correct answer!");
+     			$("#tjstatus").html("<p>Please wait.... TJ is still solving the puzzle.</p>");
+     			setTimeout(enablehint, 1000);
+     		
+     	
      		}
-
+     		
 		}
 		function enablehint(){
+			
 			$("#hintchoice").show();
-
+			
 		}
-
+		
 		function sendhint(){
-			results={button: "Yes"}
+			results={button: "Yes"};
 			$("#hintchoice").hide();
-			$("#hintsent").show();
+			console.log("sendhint");
+			$("#blockAmiddle").html("TJ will have an opportunity to respond to your hint with a short message.");
+			addstatusline(new Date(new Date().getTime()).toUTCString()+" - Hint Sent.");
+			console.log($("#tjstatus").html());
 			setTimeout(showmessage, 10000);
-
+			 
+			
 		}
-
+		
+		function addstatusline(text){
+			currenthtml=$("#tjstatus").html()
+			$("#tjstatus").html(currenthtml+"<p>"+text+"</p>")
+		}
+		
 		function showmessage(){
 			$("#hintsent").hide();
-			$("#message").show();
-			setTimeout(finished, 10000);
+			addstatusline(new Date(new Date().getTime()).toUTCString()+"  TJ:  Thanks so much! I appreciate it!");
+			setTimeout(finished, 1000);
 		}
-
+		
 		function finished(){
 			$("#message").hide();
 			$("#blockAmiddle").html("Congrats you and TJ both completed the puzzle!");
-			setTimeout(nexttask, 3000);
-
+			setTimeout(nexttask, 1000);
+			
 		}
-
+		
 		function nexttask(){
 			jatos.submitResultData(JSON.stringify(results),jatos.startNextComponent);
 		}
-
-
-
-
-
-
-
+		
+			
+		
+		
+		
+		
+		
     </script>
 </body>
 
