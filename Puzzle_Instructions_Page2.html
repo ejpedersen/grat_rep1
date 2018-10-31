@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" /> 
+    <script src="/assets/javascripts/jatos.js"></script>
+    <script src="/study_assets/gratitude/libs/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Puzzle-Solving Task Instructions Page 2 </title>
+</head>
+
+<body>
+	<h2> Instructions: First Puzzle-Solving Task </h2>	
+	
+    <p> You will have 5 minutes to solve the puzzle. If you do not correctly solve the puzzle in that time, you will not receive the $1.00 bonus.</p>
+    
+    <p>The puzzle will consist of an image. Based on the characteristics of that image, you must solve the correct 3-digit code. </p>
+    
+    <p> Next, we will reveal whether you or your partner will be randomly selected to receive a hint for the first puzzle task.</p>
+    
+    
+		
+    <div id="buttons">
+	<!-- create next button -->
+        <button id="nextButton">Next</button>
+    </div>
+
+    <script type="text/javascript">
+        jatos.onLoad(function() {
+            $("#buttons").show();
+        });
+<!-- if agree button clicked, create a variable saying consent was given -->
+        $('#nextButton').click(function() {
+<!-- start the next component of the study (doesn't currently exist -->
+            jatos.startNextComponent();
+        });
+    </script>
+</body>
+
+</html>

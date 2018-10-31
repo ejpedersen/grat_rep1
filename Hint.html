@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" />
+    <script src="/assets/javascripts/jatos.js"></script>
+    <script src="/study_assets/gratitude/libs/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8" />
+    <title> Hint </title>
+</head>
+<!-- minor change -->
+<body>
+	<h2> You have been randomly selected to receive a hint! </h2>
+
+  <p> Hint: white, orange, gray </p>
+
+  <p> This hint will be displayed during the first puzzle task.</p>
+
+  <p>Your partner will not be receiving a hint for the first task. However, if you correctly solve the puzzle before your partner is able to solve the puzzle, you will have the option to send the hint to your partner </p>
+
+  <p> Remember, your own earnings in this task are not affected by your partner's earnings. So, whether or not you share the hint will not affect your own earnings. </p>
+
+  <p> Whether you get the option to send the hint will depend on how long it takes for your partner to solve the puzzle. If the opportunity to share the hint arises, we will remind you of the consequences for each decision. </p>
+
+  <p> Click 'Continue' to sync with your partner so you can both begin solving the puzzle at the same time. </p>
+
+
+
+
+    <div id="buttons">
+	<!-- create next button -->
+        <button id="nextButton">Continue</button>
+    </div>
+
+    <script type="text/javascript">
+        jatos.onLoad(function() {
+            $("#buttons").show();
+        });
+<!-- if agree button clicked, create a variable saying consent was given -->
+        $('#nextButton').click(function() {
+<!-- start the next component of the study (doesn't currently exist -->
+            jatos.startNextComponent();
+        });
+    </script>
+</body>
+
+</html>

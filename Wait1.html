@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" /> 
+	<script src="/study_assets/gratitude/javascript/jquery-3.1.1.min.js"></script>
+    <script src="/study_assets/gratitude/survey.jquery.js"></script>
+    <script src="/assets/javascripts/jatos.js"></script>
+    <title>Intro</title>
+    
+ <!-- The style specification below allows for the loader to be centered--> 
+    <style>
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
+
+</head>
+
+
+<body>
+  
+  <h2> Synchronizing... </h2>	
+  
+  <p> Thanks. Throughout this study, you will be identified as:
+  <span style="font-family: courier;font-style: bold; font-size: 20px; color: blue" id = "ownInitials" ></span></p>
+    
+    <p>Please wait while your partner signs the consent form and inserts their initials...</p>
+    
+  <!-- Loader image --> 
+  <div id = "loader" style="display:none"><img id = "myImage"
+  src = "/study_assets/gratitude/ajax-loader.gif" style=width50%> </div>
+   
+  <!-- Initials for bogus partner -->
+  <div id="partnerInitials" style="display:none">
+    Your partner for this study will be: <span style="font-family: courier;font-style: bold; font-size: 20px; color: red">TJ</span></div>
+    
+        <div id="buttons">
+	<!-- create next button -->
+        <button id="nextButton">Next</button>
+    </div>
+
+<!-- SCRIPTS start here. They feature some timeout functions for deception purposes -->
+
+  <!-- This retrieves the participants' initials -->
+  <script>
+  jatos.onLoad(function(){
+  var x = jatos.studySessionData.workerName;
+  document.getElementById("ownInitials").innerHTML = x;
+  })
+  </script>
+
+  <!--- This displays the bogus partner's initials (after the loader is gone)-->
+  <script type="text/javascript">
+          setTimeout(function () {
+            $("#partnerInitials").show();
+        },10400);
+  </script>
+  
+   
+   <!-- Code for the loading icon that disappears after set time --> 
+    <script type="text/javascript">
+
+  (function(){
+    var loader = document.getElementById("loader"),
+
+      show = function(){
+        loader.style.display = "block";
+        setTimeout(hide, 10000);
+      },
+
+      hide = function(){
+        loader.style.display = "none";
+      };
+
+    show();
+  })();
+
+</script>
+    
+    <!-- This is the next button, which also appears after loading icon is gone-->
+    <script>
+        setTimeout(function () {
+            $("#buttons").show();
+        },12000);
+        
+<!-- if agree button clicked, create a variable saying consent was given -->
+        $('#nextButton').click(function() {
+<!-- start the next component of the study (doesn't currently exist -->
+            jatos.startNextComponent();
+        });
+    </script>
+    
+
+</body>
+
+</html>
