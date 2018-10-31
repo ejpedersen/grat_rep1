@@ -4,6 +4,7 @@ body {
   color: #666;
   max-width: 2000px;
   font-family: 'Arial';
+  margin: 50px;
 }
 
 p#text {
