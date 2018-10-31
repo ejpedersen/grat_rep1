@@ -20,6 +20,8 @@ We should all take the following steps on our local machines:
 
 Now JATOS and GitHub will be referencing the same working directory on your folder. This will make collaborating on code seamless. Without taking these steps, you would have to drag changed files from the repository into the folder created in `study_assets_root`. That's no fun. Now all you have to do to get JATOS to recognize the most recent version is to use `git pull`.
 
+*I updated all file paths for scripts to reference `grat_rep1` instead of `gratitude` because you will not be working from a different folder name.*
+
 ### GitHub Support
 
 Once you have the 4 steps above figured out, you will not have to repeat them (unless you delete everything).

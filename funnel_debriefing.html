@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
-  <script src="/study_assets/gratitude/jspsych-6.0.4/jspsych.js"></script>
-  <script src="/study_assets/gratitude/jspsych-6.0.4/plugins/jspsych-html-keyboard-response.js"></script>
-  <script src="/study_assets/gratitude/jspsych-6.0.4/plugins/jspsych-survey-text.js"></script>
-<link href="/study_assets/gratitude/jspsych-6.0.4/css/jspsych.css" rel="stylesheet" type="text/css">
+  <script src="/study_assets/grat_rep1/jspsych-6.0.4/jspsych.js"></script>
+  <script src="/study_assets/grat_rep1/jspsych-6.0.4/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="/study_assets/grat_rep1/jspsych-6.0.4/plugins/jspsych-survey-text.js"></script>
+<link href="/study_assets/grat_rep1/jspsych-6.0.4/css/jspsych.css" rel="stylesheet" type="text/css">
   <script src="/assets/javascripts/jatos.js"></script>
 </head>
 
 <body>
 
     <!-- scripts start here -->
-    
-    
+
+
     <!-- randomize title of game based on condition -->
 
     <script type="text/javascript">
         jatos.onLoad(function() {
-          
+
   var timeline = [];
 
     /* define welcome message trial */
@@ -30,43 +30,43 @@
 };
 
   timeline.push(q1);
-  
+
     var q2 = {
   type: 'survey-text',
   questions: [{prompt: "Was the experiment was clear in its overall purpose and did the procedure make sense?"}],
 };
 
   timeline.push(q2);
-  
+
     var q3 = {
   type: 'survey-text',
   questions: [{prompt: "Do you have any personal feelings and/or reactions to the experiment?"}],
 };
 
   timeline.push(q3);
-  
+
     var q4 = {
   type: 'survey-text',
   questions: [{prompt: "Today’s experiment was designed to help us test some very specific hypotheses about human behavior. Do you have any idea what those hypotheses were? If you had to guess, what would you say were the hypotheses we were testing today?"}],
 };
 
   timeline.push(q4);
-  
+
     var q5 = {
   type: 'survey-text',
   questions: [{prompt: "Did you find any aspect of the procedure odd, upsetting or disturbing?"}],
 };
 
   timeline.push(q5);
-  
+
     var q6 = {
   type: 'survey-text',
   questions: [{prompt: "Did you wonder at any point whether there was more than meets the eye to any of the procedures that we had you complete today? That is, do you think that there might have been any information that we held back from explaining from you about the experiment until now?"}],
 };
 
   timeline.push(q6);
-  
-  
+
+
     var q7 = {
   type: 'survey-text',
   questions: [{prompt: "If you had any suspicions, do you think they affected your behavior during the study?"}],
@@ -79,10 +79,10 @@
     jsPsych.init({
       timeline: timeline
     });
-      
+
         });
-        
-        
+
+
     </script>
 </body>
 

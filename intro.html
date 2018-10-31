@@ -2,34 +2,34 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="/study_assets/gratitude/css/consent_form.css" /> 
-	<script src="/study_assets/gratitude/javascript/jquery-3.1.1.min.js"></script>
-    <script src="/study_assets/gratitude/survey.jquery.js"></script>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/consent_form.css" />
+	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+    <script src="/study_assets/grat_rep1/survey.jquery.js"></script>
     <script src="/assets/javascripts/jatos.js"></script>
-    <link rel="stylesheet" href="/study_assets/gratitude/bootstrap-3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/study_assets/gratitude/study.css">
+    <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/study_assets/grat_rep1/study.css">
     <title>Intro</title>
 </head>
 
 <body>
-	<h2> Introduction </h2>	
+	<h2> Introduction </h2>
     <p> Welcome to the decision making study. In this study, you will be completing a number of different tasks. Before we begin, Please select the first letter of your first and last names.</p>
-    
+
     <div id="demographics"></div>
-    
+
     <p>You will participate in this study alongside another participant in this lab. Your partner will see your initials.</p>
-    
- <!--- I'm comementing this out because the complete button from JQuery needs to be used in order to pass down the variables.    
-        <div id="buttons">
+
+ <!--- I'm comementing this out because the complete button from JQuery needs to be used in order to pass down the variables.
+        <div id="buttons"-->
 	<!-- create next button
         <button id="nextButton">Next</button>
     </div>
--->  
+-->
 
-    
+
     <script>
         jatos.onLoad(function () {
-          
+
           jatos.studySessionData["workerName"] = "JR";
 
             Survey.Survey.cssType = "bootstrap";
@@ -62,7 +62,7 @@
             survey.onComplete.add(function (result) {
             	var initials=result.data['first']+result.data['last'];
             	jatos.studySessionData["workerName"] = initials;
-            	
+
                 $("#demographics").hide(); // Hides the 'Thank you for completing ...' message
                 jatos.submitResultData(JSON.stringify(result.data), jatos.startNextComponent);
             });
@@ -70,16 +70,16 @@
             $("#demographics").Survey({
                 model: survey
             });
-        
+
             $("#buttons").show();
         });
-     </script>   
- 
+     </script>
+
 <!--- I'm comementing this out because the complete button from JQuery needs to be used in order to pass down the variables.
- 
- 
+
+
      <script type = "text/javascript">
-<!-- if agree button clicked, create a variable saying consent was given 
+<!-- if agree button clicked, create a variable saying consent was given
         $('#nextButton').click(function() {
           jatos.startNextComponent();
         });
