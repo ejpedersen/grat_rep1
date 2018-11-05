@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+	//<script src="/study_assets/grat_rep1/javascript/survey.jquery.js"></script>
+	<script src="/assets/javascripts/jatos.js"></script>
+	<link rel="stylesheet" href="/study_assets/grat_rep1/css/pure-min.css">
+	<link rel="stylesheet" href="/study_assets/grat_rep1/css/study.css">
+</head>
+
+<body>
+
+	<h2 class="is-center">Award Allocation</h2>
+	<div class="pure-g">
+		<div class="pure-u-1-4"></div>
+		<div class="pure-u-1-2">
+			<img src="img/MeandPartner.png" width="100%">
+			<p> Use the slider below to select how much of the $3 award you would like to allocate to yourself and how much of the $3 award you would like to allocate to your partner. </p>
+			<p> Click 'Confirm' to confirm your desired dollar allocation. </p>
+		</div>
+		<div class="pure-u-1-4"></div>
+	</div>
+	<div class="pure-g">
+		<div class="pure-u-1-4 is-right"></div>
+		<div class="pure-u-1-2">
+			<input type="range" min="0" max="30" value="15" class="slider" id="myRange">
+		</div>
+		<div class="pure-u-1-4"></div>
+	</div>
+	<div class="pure-g">
+		<div class="pure-u-1-4"></div>
+		<div class="pure-u-1-4 is-center">
+			<h2>Me: <span id="myTake"></span></h2>
+		</div>
+		<div class="pure-u-1-4 is-center">
+			<h2>Partner: <span id="partnerTake"></span></h2>
+		</div>
+	</div>
+	<div class="pure-g">
+		<div class="pure-u-1-1 is-center">
+			<form id="submitForm">
+				<input class="ui-widget ui-button ui-state-default ui-corner-all form-item" type="submit" value="Confirm">
+			</form>
+		</div>
+	</div>
+
+	<p id="quit">Quit Study</p>
+
+	<script>
+		var componentResultData = {};
+		var slider = document.getElementById("myRange");
+		var myTake = document.getElementById("myTake"); //current 3 - slider value/10 and converting it to string of characters that has two digits to right of decimal
+		myTake.innerHTML = "$" + (3.0 - slider.value / 10.0).toFixed(2);
+		var partnerTake = document.getElementById("partnerTake");
+		partnerTake.innerHTML = "$" + (slider.value / 10.0).toFixed(2);
+
+		slider.oninput = function() { //lets me see what slider is doing in real time
+			myTake.innerHTML = "$" + (3.0 - this.value / 10.0).toFixed(2);
+			partnerTake.innerHTML = "$" + (this.value / 10.0).toFixed(2);
+		}
+
+		// What todo when worker presses the Submit button // this is jquery: $("") look for thing tagged as submitForm and define what happens when submit occurs
+		$("#submitForm").submit(function(event) {
+
+			// Prevent normal submit listener call prevents it from giving us bad request
+			event.preventDefault();
+			var answer = confirm("Do you really want to give " + myTake.innerHTML + " to your partner and keep " + partnerTake.innerHTML + " for yourself?");
+			if (answer == true) {
+				componentResultData.myTake = (3.0 - slider.value / 10.0).toFixed(2);
+				componentResultData.partnerTake = (slider.value / 10.0).toFixed(2);
+				var resultDataAsStr = JSON.stringify(componentResultData);
+				// Post results back to the server and move to the next component
+				jatos.submitResultData(resultDataAsStr, jatos.startNextComponent);
+			}
+		});
+
+		// What todo when worker presses the abort button
+		$("#quit").click(function() {
+			var answer = confirm("Do you really want to quit this study?");
+			if (answer == true) {
+				jatos.abortStudy("Worker decided to abort");
+			}
+		});
+	</script>
+</body>
+
+</html>

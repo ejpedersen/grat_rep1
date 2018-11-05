@@ -3,46 +3,56 @@
 
 <head>
   <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css" />
-	<script src="/study_assets_root/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
-    <script src="/study_assets_root/grat_rep1/survey.jquery.js"></script>
-    <script src="/assets/javascripts/jatos.js"></script>
-    <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">>
-    <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
-    <title>Intro</title>
+  <script src="/study_assets_root/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+  <script src="/study_assets_root/grat_rep1/survey.jquery.js"></script>
+  <script src="/assets/javascripts/jatos.js"></script>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
+  <title>Intro</title>
 </head>
 
 <body>
-	<h2>You are now done with the study!</h2>
-    <p><b>Thank you for participating. Before you leave, please take a minute to read the information below. This includes important information about the study's procedure and purpose.</b></p>
+  <h2>
+    You are now done with the study!
+  </h2>
+  <br />
+  <br />
+  <p>
+    <b>Thank you for participating. Before you leave, please take a minute to read the information below. This includes important information about the study's procedure and purpose.</b>
+  </p>
+  <p>
+    Our major concern in this study is whether a person values another more highly after the other person has expressed gratitude. For example, if person A does something for person B, and B expresses gratitude, does person A then value person B more then he or she did before? You were randomly assigned to either receive (or view) an expression of gratitude (e.g., “Thank you!”) or a more neutral message. In reality, the interactions with this person were staged by us so that we could test these specific hypotheses.
+  </p>
+  <p>
+    Additionally, we are interested in the downstream implications of these effects for behavior. During this study, you were asked to perform a number of judgment and decision-making tasks after viewing an expression of gratitude. We hypothesize that people’s behavior in these tasks will reflect a more cooperative approach when they have been assigned to receive or view an expression of gratitude.
+  </p>
+  <p>
+    We are very sorry that we had to deceive you, but that was the only way we could get the data we needed to test our hypotheses about gratitude. We hope it seems obvious to you that we couldn’t have tested what we wanted to test without keeping you in the dark about some of the elements of the study. If we had simply told you that there were make-believe interactions, it is unlikely that we could accurately test our ideas. Therefore, it was important that you believed the interactions were real. It makes us uncomfortable any time we have to deceive participants in this way, but to answer some questions about human behavior, sometimes deception cannot be helped while we try keep the experiences of our participants as uniform as possible.
+  </p>
+  <p>
+    If you have any other questions about the study, or your participation, now that you know the real nature of the study, please ask the experimenter or email Dr. Eric Pedersen (eric.j.pedersen@colorado.edu).
+  </p>
 
-<p>Our major concern in this study is whether a person values another more highly after the other person has expressed gratitude. For example, if person A does something for person B, and B expresses gratitude, does person A then value person B more then he or she did before? You were randomly assigned to either receive (or view) an expression of gratitude (e.g., “Thank you!”) or a more neutral message. In reality, the interactions with this person were staged by us so that we could test these specific hypotheses.</p>
+  <div id="buttons">
+    <!-- create next button -->
+    <button id="nextButton">I have read this information.</button>
+  </div>
 
-<p>Additionally, we are interested in the downstream implications of these effects for behavior. During this study, you were asked to perform a number of judgment and decision-making tasks after viewing an expression of gratitude. We hypothesize that people’s behavior in these tasks will reflect a more cooperative approach when they have been assigned to receive or view an expression of gratitude.</p>
+  <script>
+    jatos.onLoad(function() {
 
-<p>We are very sorry that we had to deceive you, but that was the only way we could get the data we needed to test our hypotheses about gratitude. We hope it seems obvious to you that we couldn’t have tested what we wanted to test without keeping you in the dark about some of the elements of the study.  If we had simply told you that there were make-believe interactions, it is unlikely that we could accurately test our ideas. Therefore, it was important that you believed the interactions were real. It makes us uncomfortable any time we have to deceive participants in this way, but to answer some questions about human behavior, sometimes deception cannot be helped while we try keep the experiences of our participants as uniform as possible.</p>
-
-<p>If you have any other questions about the study, or your participation, now that you know the real nature of the study, please ask the experimenter or email Dr. Eric Pedersen (eric.j.pedersen@colorado.edu).</p>
-
-        <div id="buttons">
-	<!-- create next button -->
-        <button id="nextButton">I have read this information.</button>
-    </div>
-
-    <script>
-        jatos.onLoad(function () {
-
-            $("#buttons").show();
-        });
-     </script>
+      $("#buttons").show();
+    });
+  </script>
 
 
-     <script type = "text/javascript">
-<!-- if agree button clicked, create a variable saying consent was given-->
+  <script type="text/javascript">
+    <!-- if agree button clicked, create a variable saying consent was given-->
 
-        $('#nextButton').click(function() {
-          jatos.endStudy("succesful");
-        });
-    </script>
+    $('#nextButton').click(function() {
+      jatos.endStudy("succesful");
+    });
+  </script>
 
 
 </body>
