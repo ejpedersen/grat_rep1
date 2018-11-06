@@ -6,11 +6,11 @@ We should all take the following steps on our local machines:
 
 *In JATOS*
 
-1. Create a 'New Study' and call it 'grat_rep1'.
+1. Download gratitude_experiment.zip from GitHub (under jatos_structure) and Import in JATOS.
 
 * This will create a folder within `study_assets_root` called `grat_rep1`.
 
-2. Delete the folder created by JATOS.
+2. Delete the entire folder created by JATOS.
 
 *In ATOM*
 
