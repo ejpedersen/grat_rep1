@@ -19,7 +19,7 @@
     Welcome to the decision making study. In this study, you will be completing a number of different tasks. Before we begin, Please select the first letter of your first and last names.
   </p>
 
-  <div id="demographics"></div>
+  <div id="initials"></div>
 
   <p>
     You will participate in this study alongside another participant in this lab. Your partner will see your initials.
@@ -33,8 +33,9 @@
 -->
   <script>
     jatos.onLoad(function() {
-      jatos.studySessionData["workerName"] = "JR";
+      //jatos.studySessionData["workerName"] = "JR";
       Survey.Survey.cssType = "bootstrap";
+      Survey.defaultBootstrapCss.navigationButton = "btn btn-default";
       window.survey = new Survey.Model({
         pages: [{
           questions: [{
@@ -54,23 +55,19 @@
               colCount: 0,
               choices: jatos.componentJsonInput.last,
               isRequired: true
-            }
-          ]
+            }]
         }]
       })
-
       survey.onComplete.add(function(result) {
         var initials = result.data['first'] + result.data['last'];
         jatos.studySessionData["workerName"] = initials;
 
-        $("#demographics").hide(); // Hides the 'Thank you for completing ...' message
+        $("#initials").hide(); // Hides the 'Thank you for completing ...' message
         jatos.submitResultData(JSON.stringify(result.data), jatos.startNextComponent);
       });
-
-      $("#demographics").Survey({
+      $("#initials").Survey({
         model: survey
       });
-      $("#buttons").addClass("btn btn-default");
       $("#buttons").show();
     });
   </script>

@@ -65,7 +65,7 @@
 
 			// Prevent normal submit listener call prevents it from giving us bad request
 			event.preventDefault();
-			var answer = confirm("Do you really want to give " + myTake.innerHTML + " to your partner and keep " + partnerTake.innerHTML + " for yourself?");
+			var answer = confirm("Do you really want to give " + partnerTake.innerHTML + " to your partner and keep " + myTake.innerHTML + " for yourself?");
 			if (answer == true) {
 				componentResultData.myTake = (3.0 - slider.value / 10.0).toFixed(2);
 				componentResultData.partnerTake = (slider.value / 10.0).toFixed(2);

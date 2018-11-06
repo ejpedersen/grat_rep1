@@ -5,10 +5,7 @@ body {
   max-width: 2000px;
   font-family: 'Arial';
   margin: 50px;
-}
-
-p#text {
-  margin: 50px;
+  font-size: 14px;
 }
 
 #buttons {
