@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
 	<script src="/study_assets/grat_rep1/survey.jquery.js"></script>
 	<script src="/assets/javascripts/jatos.js"></script>
@@ -10,7 +12,16 @@
 </head>
 
 <body>
-	<div id="demographics"></div>
+	<div class="header">
+		<div class="home-menu pure-menu pure-menu-horizontal">
+			<a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+			<a class="pure-menu-heading" href="">CU Boulder</a>
+		</div>
+	</div>
+	<div id="demographics" class="content"></div>
+	<div class="footer l-box is-center">
+    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+  </div>
 
 	<script>
 		jatos.onLoad(function() {

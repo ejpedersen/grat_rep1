@@ -1,52 +1,79 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
-	//<script src="/study_assets/grat_rep1/javascript/survey.jquery.js"></script>
+	<script src="/study_assets/grat_rep1/survey.jquery.js"></script>
 	<script src="/assets/javascripts/jatos.js"></script>
-	<link rel="stylesheet" href="/study_assets/grat_rep1/css/pure-min.css">
-	<link rel="stylesheet" href="/study_assets/grat_rep1/css/study.css">
+	<link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
 </head>
 
+<style>
+  img.not-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+		width: 50%;
+  }
+</style>
+
 <body>
-
-	<h2 class="is-center">Award Allocation</h2>
-	<div class="pure-g">
-		<div class="pure-u-1-4"></div>
-		<div class="pure-u-1-2">
-			<img src="img/MeandPartner.png" width="100%">
-			<p> Use the slider below to select how much of the $3 award you would like to allocate to yourself and how much of the $3 award you would like to allocate to your partner. </p>
-			<p> Click 'Confirm' to confirm your desired dollar allocation. </p>
-		</div>
-		<div class="pure-u-1-4"></div>
-	</div>
-	<div class="pure-g">
-		<div class="pure-u-1-4 is-right"></div>
-		<div class="pure-u-1-2">
-			<input type="range" min="0" max="30" value="15" class="slider" id="myRange">
-		</div>
-		<div class="pure-u-1-4"></div>
-	</div>
-	<div class="pure-g">
-		<div class="pure-u-1-4"></div>
-		<div class="pure-u-1-4 is-center">
-			<h2>Me: <span id="myTake"></span></h2>
-		</div>
-		<div class="pure-u-1-4 is-center">
-			<h2>Partner: <span id="partnerTake"></span></h2>
-		</div>
-	</div>
-	<div class="pure-g">
-		<div class="pure-u-1-1 is-center">
-			<form id="submitForm">
-				<input class="ui-widget ui-button ui-state-default ui-corner-all form-item" type="submit" value="Confirm">
-			</form>
+	<div class="header">
+		<div class="home-menu pure-menu pure-menu-horizontal">
+			<a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+			<a class="pure-menu-heading" href="">CU Boulder</a>
 		</div>
 	</div>
 
+	<div class="content">
+		<h2 class="content-head is-center">
+			Award Allocation
+		</h2>
+		<div class="pure-g">
+			<div class="pure-u-1-4"></div>
+			<div class="pure-u-1-2">
+				<img src="img/MeandPartner.png" class="not-header">
+				<p>
+					Use the slider below to select how much of the $3 award you would like to allocate to yourself and how much of the $3 award you would like to allocate to your partner.
+				</p>
+				<p>
+					Click 'Confirm' to confirm your desired dollar allocation.
+				</p>
+			</div>
+			<div class="pure-u-1-4"></div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-1-4 is-right"></div>
+			<div class="pure-u-1-2">
+				<input type="range" min="0" max="30" value="15" class="slider" id="myRange">
+			</div>
+			<div class="pure-u-1-4"></div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-1-4"></div>
+			<div class="pure-u-1-4 is-center">
+				<h2>Me: <span id="myTake"></span></h2>
+			</div>
+			<div class="pure-u-1-4 is-center">
+				<h2>Partner: <span id="partnerTake"></span></h2>
+			</div>
+		</div>
+		<div class="pure-g">
+			<div class="pure-u-1-1 is-center">
+				<form id="submitForm">
+					<input class="ui-widget ui-button ui-state-default ui-corner-all form-item" type="submit" value="Confirm">
+				</form>
+			</div>
+		</div>
+	</div>
 	<p id="quit">Quit Study</p>
 
+	<div class="footer l-box is-center">
+		CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+	</div>
 	<script>
 		var componentResultData = {};
 		var slider = document.getElementById("myRange");

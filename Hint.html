@@ -1,56 +1,71 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+  <script src="/study_assets/grat_rep1/survey.jquery.js"></script>
   <script src="/assets/javascripts/jatos.js"></script>
-  <script src="/study_assets/grat_rep1/libs/jquery-1.11.1.min.js"></script>
-  <meta charset="UTF-8" />
-  <title> Hint </title>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
 </head>
 
 <body>
-  <h2>
-    You have been randomly selected to receive a hint!
-  </h2>
-
-  <p>
-    Hint: white, orange, gray
-  </p>
-  <p>
-    This hint will be displayed during the first puzzle task.
-  </p>
-  <p>
-    Your partner will not be receiving a hint for the first task. However, if you correctly solve the puzzle before your partner is able to solve the puzzle, you will have the option to send the hint to your partner.
-  </p>
-
-  <p>
-    Remember, your own earnings in this task are not affected by your partner's earnings. So, whether or not you share the hint will not affect your own earnings. </p>
-
-  <p>
-    Whether you get the option to send the hint will depend on how long it takes for your partner to solve the puzzle. If the opportunity to share the hint arises, we will remind you of the consequences for each decision. </p>
-
-  <p>
-    Click 'Continue' to sync with your partner so you can both begin solving the puzzle at the same time. </p>
-
-
-
-
-  <div id="buttons">
-    <!-- create next button -->
-    <button id="nextButton" class="btn btn-default">Continue</button>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+      <a class="pure-menu-heading" href="">CU Boulder</a>
+    </div>
   </div>
 
-  <script type="text/javascript">
-    jatos.onLoad(function() {
-      $("#buttons").show();
-    });
-    //if agree button clicked, create a variable saying consent was given
-    $('#nextButton').click(function() {
-      //start the next component of the study (doesn't currently exist -->
-      jatos.startNextComponent();
-    });
-  </script>
+  <div class="content">
+    <h2 class="content-head is-center">
+      You have been randomly selected to receive a hint!
+    </h2>
+
+    <p>
+      <b>Hint:</b> <em>white, orange, gray</em>
+    </p>
+    <p>
+      This hint will be displayed during the first puzzle task.
+    </p>
+    <p>
+      Your partner will not be receiving a hint for the first task. However, if you correctly solve the puzzle before your partner is able to solve the puzzle, you will have the option to send the hint to your partner.
+    </p>
+
+    <p>
+      Remember, your own earnings in this task are not affected by your partner's earnings. So, whether or not you share the hint will not affect your own earnings. </p>
+
+    <p>
+      Whether you get the option to send the hint will depend on how long it takes for your partner to solve the puzzle. If the opportunity to share the hint arises, we will remind you of the consequences for each decision. </p>
+
+    <p>
+      Click 'Continue' to sync with your partner so you can both begin solving the puzzle at the same time. </p>
+
+
+
+
+    <div id="buttons">
+      <!-- create next button -->
+      <button id="nextButton" class="btn btn-default">Continue</button>
+    </div>
+  </div>
+
+  <div class="footer l-box is-center">
+    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+  </div>
+
+    <script type="text/javascript">
+      jatos.onLoad(function() {
+        $("#buttons").show();
+      });
+      //if agree button clicked, create a variable saying consent was given
+      $('#nextButton').click(function() {
+        //start the next component of the study (doesn't currently exist -->
+        jatos.startNextComponent();
+      });
+    </script>
 </body>
 
 </html>

@@ -1,104 +1,134 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+	<script src="/study_assets/grat_rep1/survey.jquery.js"></script>
 	<script src="/assets/javascripts/jatos.js"></script>
-	<link rel="stylesheet" href="/study_assets/grat_rep1/gratitude_money/pure-min.css">
+	<link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
-
 </head>
 
+<style>
+  img.not-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
 <body>
-	<div class="pure-g" id="blockA">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center" id="blockAmiddle">
-			<h2> First Puzzle-Solving Task </h2>
-			<p> <img src="/study_assets/grat_rep1/img/puzzle.png" width="800"> </p>
-			<p> Using the image above, solve the correct 3-digit code below by selecting numbers from the boxes and clicking 'submit' to check your answer. You can guess as many times as you need, but you only have 5 minutes to solve the puzzle. </p>
-			<p> Remember, you were randomly selected to receive a hint, which can be seen below. </p>
-			<p> Hint: white, orange, gray </p>
+	<div class="header">
+		<div class="home-menu pure-menu pure-menu-horizontal">
+			<a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+			<a class="pure-menu-heading" href="">CU Boulder</a>
 		</div>
-		<div class="pure-u-1-6"></div>
-	</div>
-	<div class="pure-g" id="pulldowns">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-
-			<select id="col1">
-				<option value="0"> Count 1 </option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-			</select>
-
-			<select id="col2">
-				<option value="0"> Count 2 </option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-			</select>
-
-			<select id="col3">
-				<option value="0"> Count 3 </option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-			</select>
-
-			<p />
-			<button class="pure-button pure-button-primary" onclick="dosubmit()">Submit</button>
-		</div>
-		<div class="pure-u-1-6"></div>
-
 	</div>
 
-	<div class="pure-g" id="hintchoice">
+	<div class="content">
+		<h2 class="content-head is-center">
+			First Puzzle-Solving Task
+		</h2>
+		<p>
+			<img src="/study_assets/grat_rep1/img/puzzle.png" width="800" class="not-header">
+		</p>
+		<p>
+			Using the image above, solve the correct 3-digit code below by selecting numbers from the boxes and clicking 'submit' to check your answer. You can guess as many times as you need, but you only have 5 minutes to solve the puzzle.
+		</p>
+		<p>
+			Remember, you were randomly selected to receive a hint, which can be seen below.
+		</p>
+		<p>
+			<b>Hint:</b> <em>white, orange, gray</em>
+		</p>
 		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> Do you want to share the hint with TJ?</p>
-			<button class="pure-button pure-button-primary" onclick="sendhint()">Yes</button>
-			<button class="pure-button" onclick="nexttask()">No</button>
+		<div class="pure-g" id="pulldowns">
+			<div class="pure-u-1-6"></div>
+			<div class="pure-u-2-3 is-center">
+
+				<select id="col1">
+					<option value="0">Select...</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</select>
+
+				<select id="col2">
+					<option value="0">Select...</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</select>
+
+				<select id="col3">
+					<option value="0">Select...</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</select>
+
+				<br />
+				<br />
+
+				<button class="btn btn-default" onclick="dosubmit()">Submit</button>
+			</div>
+			<div class="pure-u-1-6"></div>
+
 		</div>
-		<div class="pure-u-1-6"></div>
+
+		<div class="pure-g" id="hintchoice">
+			<div class="pure-u-1-6"></div>
+			<div class="pure-u-2-3 is-center">
+				<p> Do you want to share the hint with TJ?</p>
+				<button class="pure-button pure-button-primary" onclick="sendhint()">Yes</button>
+				<button class="pure-button" onclick="nexttask()">No</button>
+			</div>
+			<div class="pure-u-1-6"></div>
+		</div>
+
+		<div class="pure-g" id="hintsent">
+			<div class="pure-u-1-6"></div>
+			<div class="pure-u-2-3 is-center">
+				<p> The hint has been sent to TJ.</p>
+				<p> TJ will have an opportunity to respond to the hint by sending you a short message.</p>
+			</div>
+			<div class="pure-u-1-6"></div>
+		</div>
+
+		<div class="pure-g" id="message">
+			<div class="pure-u-1-6"></div>
+			<div class="pure-u-2-3 is-center">
+				<p> You have received a message from TJ. </p>
+				<p> Thanks so much! I appreciate it!</p>
+			</div>
+			<div class="pure-u-1-6"></div>
+		</div>
 	</div>
 
-	<div class="pure-g" id="hintsent">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> The hint has been sent to TJ.</p>
-			<p> TJ will have an opportunity to respond to the hint by sending you a short message.</p>
-		</div>
-		<div class="pure-u-1-6"></div>
-	</div>
 
-	<div class="pure-g" id="message">
-		<div class="pure-u-1-6"></div>
-		<div class="pure-u-2-3 is-center">
-			<p> You have received a message from TJ. </p>
-			<p> Thanks so much! I appreciate it!</p>
-		</div>
-		<div class="pure-u-1-6"></div>
+	<div class="footer l-box is-center">
+		CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
 	</div>
-
 
 
 

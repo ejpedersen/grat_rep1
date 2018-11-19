@@ -1,89 +1,100 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css" />
-	<script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
-	<script src="/study_assets/grat_rep1/javascript/jquery-1.11.1.min.js"></script>
-    <script src="/study_assets/grat_rep1/survey.jquery.js"></script>
-    <script src="/assets/javascripts/jatos.js"></script>
-    <title>Intro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
+  <script src="/study_assets/grat_rep1/survey.jquery.js"></script>
+  <script src="/assets/javascripts/jatos.js"></script>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
+</head>
 
- <!-- The style specification below allows for the loader to be centered-->
-    <style>
-    img {
+<style>
+  img.not-header {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    }
-    </style>
-
-</head>
-
+  }
+</style>
 
 <body>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+      <a class="pure-menu-heading" href="">CU Boulder</a>
+    </div>
+  </div>
 
-  <h2> Synchronizing... </h2>
+  <body>
+    <div class="content">
+      <h2 class="content-head is-center">
+        Synchronizing...
+      </h2>
 
-  <h3> You are now done with the first task</h3>
+      <h3> You are now done with the first task</h3>
 
-  <p> Please wait until <span style="font-family: courier; font-style: bold; color:red; font-size: 20px">TJ</span> is ready to move on.
+      <p> Please wait until <span style="font-family: courier; font-style: bold; color:red; font-size: 20px">TJ</span> is ready to move on.
 
 
-  <!-- Loader image -->
-  <div id = "loader" style="display:none"><img id = "myImage"
-  src = "/study_assets/grat_rep1/ajax-loader.gif" style=width50%> </div>
+        <!-- Loader image -->
+        <div id="loader" style="display:none"><img id="myImage" src="/study_assets/grat_rep1/ajax-loader.gif" style=width50% class="not-header"> </div>
 
         <div id="buttons">
-	<!-- create next button -->
-        <button id="nextButton" class="btn btn-default">Next</button>
+          <!-- create next button -->
+          <button id="nextButton" class="btn btn-default">Next</button>
+        </div>
     </div>
 
-<!-- SCRIPTS start here. They feature some timeout functions for deception purposes -->
+    <div class="footer l-box is-center">
+      CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+    </div>
 
-  <!-- Code to assign condition -->
-  <script>
-  jatos.onLoad(function(){
-  var condition = Math.floor(Math.random()*2);
-  jatos.studySessionData["condition"] =  condition;
-  })
-  </script>
 
-   <!-- Code for the loading icon that disappears after set time -->
+    <!-- SCRIPTS start here. They feature some timeout functions for deception purposes -->
+
+    <!-- Code to assign condition -->
+    <script>
+      jatos.onLoad(function() {
+        var condition = Math.floor(Math.random() * 2);
+        jatos.studySessionData["condition"] = condition;
+      })
+    </script>
+
+    <!-- Code for the loading icon that disappears after set time -->
     <script type="text/javascript">
+      (function() {
+        var loader = document.getElementById("loader"),
 
-  (function(){
-    var loader = document.getElementById("loader"),
+          show = function() {
+            loader.style.display = "block";
+            setTimeout(hide, 1000);
+          },
 
-      show = function(){
-        loader.style.display = "block";
-        setTimeout(hide, 1000);
-      },
+          hide = function() {
+            loader.style.display = "none";
+          };
 
-      hide = function(){
-        loader.style.display = "none";
-      };
-
-    show();
-  })();
-
-</script>
+        show();
+      })();
+    </script>
 
     <!-- This is the next button, which also appears after loading icon is gone-->
     <script>
-        setTimeout(function () {
-            $("#buttons").show();
-        },1500);
-     </script>
+      setTimeout(function() {
+        $("#buttons").show();
+      }, 1500);
+    </script>
 
-     <script>
-<!-- if agree button clicked, create a variable saying consent was given -->
-        $('#nextButton').click(function() {
-          jatos.submitResultData(JSON.stringify(jatos.studySessionData.condition), jatos.startNextComponent);
-        });
+    <script>
+      <!-- if agree button clicked, create a variable saying consent was given -->
+      $('#nextButton').click(function() {
+        jatos.submitResultData(JSON.stringify(jatos.studySessionData.condition), jatos.startNextComponent);
+      });
     </script>
 
 
-</body>
+  </body>
 
 </html>

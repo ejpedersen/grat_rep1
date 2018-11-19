@@ -1,29 +1,39 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/study_assets/grat_rep1/javascript/jquery-3.1.1.min.js"></script>
   <script src="/study_assets/grat_rep1/survey.jquery.js"></script>
   <script src="/assets/javascripts/jatos.js"></script>
   <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
-  <!-- style sheet that sets colors and font sizes -->
-  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css" />
-  <title>Intro</title>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
 </head>
 
 <body>
-  <h2>
-    Introduction
-  </h2>
-  <p>
-    Welcome to the decision making study. In this study, you will be completing a number of different tasks. Before we begin, Please select the first letter of your first and last names.
-  </p>
+  <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
+      <a class="pure-menu-heading" href="">CU Boulder</a>
+    </div>
+  </div>
 
-  <div id="initials"></div>
-
-  <p>
-    You will participate in this study alongside another participant in this lab. Your partner will see your initials.
-  </p>
+  <div class="content">
+    <h2 class="content-head is-center">
+      Introduction
+    </h2>
+    <p>
+      Welcome to the decision making study. In this study, you will be completing a number of different tasks. Before we begin, Please select the first letter of your first and last names.
+    </p>
+    <div id="initials"></div>
+    <p>
+      You will participate in this study alongside another participant in this lab. Your partner will see your initials.
+    </p>
+  </div>
+  <div class="footer l-box is-center">
+    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+  </div>
 
   <!--- I'm comementing this out because the complete button from JQuery needs to be used in order to pass down the variables.
         <div id="buttons"-->
@@ -55,7 +65,8 @@
               colCount: 0,
               choices: jatos.componentJsonInput.last,
               isRequired: true
-            }]
+            }
+          ]
         }]
       })
       survey.onComplete.add(function(result) {
