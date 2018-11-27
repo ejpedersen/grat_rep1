@@ -7,6 +7,9 @@
   <script src="/study_assets/grat_rep1/jspsych-6.0.4/plugins/jspsych-survey-likert.js"></script>
   <link href="/study_assets/grat_rep1/jspsych-6.0.4/css/jspsych.css" rel="stylesheet" type="text/css">
   <script src="/assets/javascripts/jatos.js"></script>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
+  
 </head>
 
 <!--
@@ -19,6 +22,10 @@ Why is the formatting of this so far center?
       <a class="pure-menu-heading" href=""><img src="/study_assets/grat_rep1/img/university_logo.png" height="50pt"></a>
       <a class="pure-menu-heading" href="">CU Boulder</a>
     </div>
+  </div>
+  <div id="survey"> </div> 
+  <div class="footer l-box is-center">
+    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
   </div>
   <!-- scripts start here -->
   <!-- randomize title of game based on condition -->
@@ -48,13 +55,13 @@ Why is the formatting of this so far center?
       timeline.push(likert_page);
       // start the experiment
       jsPsych.init({
-        timeline: timeline
+        timeline: timeline, 
+        display_element: "survey"
+        
       });
     });
   </script>
-  <div class="footer l-box is-center">
-    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
-  </div>
+  
 </body>
 
 </html>

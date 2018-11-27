@@ -7,6 +7,9 @@
   <script src="/study_assets/grat_rep1/jspsych-6.0.4/plugins/jspsych-survey-text.js"></script>
   <link href="/study_assets/grat_rep1/jspsych-6.0.4/css/jspsych.css" rel="stylesheet" type="text/css">
   <script src="/assets/javascripts/jatos.js"></script>
+  <link rel="stylesheet" href="/study_assets/grat_rep1/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/study_assets/grat_rep1/css/all_formatting.css">
+
 </head>
 
 <body>
@@ -16,10 +19,12 @@
       <a class="pure-menu-heading" href="">CU Boulder</a>
     </div>
   </div>
-
-  <!-- scripts start here -->
-  <!-- randomize title of game based on condition -->
-
+  <div id="debrief"> </div>
+  
+  <div class="footer l-box is-center">
+    CU Boulder | Evolution & Social Cognition Lab | Dr Eric Pedersen
+  </div>
+  
   <script type="text/javascript">
     jatos.onLoad(function() {
       var timeline = [];
@@ -77,7 +82,8 @@
       timeline.push(q7);
       /* start the experiment */
       jsPsych.init({
-        timeline: timeline
+        timeline: timeline,
+        display_element: "debrief"
       });
     });
   </script>
