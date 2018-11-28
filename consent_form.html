@@ -88,17 +88,17 @@
   </div>
 
   <script type="text/javascript">
-    // when page loads, show buttons -->
+    // when page loads, show buttons
     jatos.onLoad(function() {
       $("#buttons").show();
     });
-    // if agree button clicked, create a variable saying consent was given -->
+    // if agree button clicked, create a variable saying consent was given
     $('#agreeButton').click(function() {
       var result = "Consent given.";
-      // submit this result to JATOS to store it, then start the next component of the study -->
+      // submit this result to JATOS to store it, then start the next component of the study
       jatos.submitResultData(result, jatos.startNextComponent);
     });
-    // if cancel button clicked, abort study -->
+    // if cancel button clicked, abort study 
     $('#cancelButton').click(function() {
       jatos.abortStudy("Consent not given.");
     });
